@@ -7,7 +7,6 @@ exports.up = function(knex) {
     story.string('date', 18).notNullable()
         // could change this to time stamp using  .defaultTo(knex.fn.now());
     story.string('textbody', 588).notNullable()
-    story.string('photo_url', 255);
     story.boolean('approved').defaultTo(false)
 
   })
