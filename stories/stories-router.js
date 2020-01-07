@@ -21,7 +21,6 @@ router.post('/process', (req, res) => {
 })
 
 router.get('/process', restricted, (req, res) => {
-    Story.
 })
 
 router.get('/process/:id', restricted, (req, res) => {
