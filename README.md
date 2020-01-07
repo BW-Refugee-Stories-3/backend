@@ -59,10 +59,8 @@ __Auth:__
 
 ```js
 {
-    "email": "user@website.com" // must be a valid email
-    "story": "I want to be an admin very badly pls let me" // must be a string, max length 328 characters long
-    "username": "refugeeAdmin" // required, must be at least 4 charaters long 
-    "password": "aPassword" // required, must be at least 6 charaters long 
+    "username": "refugeeAdmin" // required
+    "password": "aPassword" // required
 }
 
 ```
@@ -71,9 +69,8 @@ __Auth:__
 
 ```js
 {
-    "username": "refugeeAdmin" // must be at least 4 charaters long 
-    "password": "aPassword" // must be at least 6 charaters long 
-
+    "username": "refugeeAdmin" // required
+    "password": "aPassword" // required
     // if successful - this will return a token that you will need to save to local storage. This will be required to access many of the end points below.
 }
 
