@@ -47,7 +47,7 @@ This REST API was built using the following tools/libraries:
 <br/>
 <br/>
 
-The base URI for this project will be `https://refugee-stories-build-week.com`, all requests must use this URL. For example, `https://refugee-stories-build-week.com/api/login`
+The base URI for this project will be `https://refugee-stories-build-week.herokuapp.com`, all requests must use this URL. For example, `https://refugee-stories-build-week.herokuapp.com/api/login`
 
 <br/>
 
