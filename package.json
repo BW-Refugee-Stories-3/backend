@@ -4,7 +4,7 @@
   "description": "[@spenclark](https://github.com/spenclark)",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon",
+    "server": "nodemon index.js",
     "start": "node index.js",
     "test": "cross-env DB_ENV=testing jest --watch"
   },
