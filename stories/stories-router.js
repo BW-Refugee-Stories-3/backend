@@ -5,13 +5,15 @@ const Story = require('./stories-model.js')
 const restricted = require('../auth/auth-middleware.js');
 
 router.get('/approved', (req, res) => {
-    Story.findBy(approved = 0)
+    Story.sort(1)
     .then(data => {
         res.status(200).json(data)
     })
     .catch(err => res.send(err));
 
 })
+
+// 0 is false
 
 router.post('/process', (req, res) => {
     let story = req.body;
@@ -26,7 +28,7 @@ router.post('/process', (req, res) => {
 })
 
 router.get('/process', (req, res) => {
-    Story.findBy(approved = 1)
+    Story.sort(0)
     .then(data => {
         res.status(200).json(data)
     })
@@ -60,7 +62,7 @@ router.delete('/process/:id', (req, res) => {
         }})
         .catch(err => {
             res.status(500).json({ 
-              message: 'Failed to update log',
+              message: 'Failed to Delete Story',
             });
           })
     }) 

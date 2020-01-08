@@ -7,6 +7,7 @@ module.exports = {
     findBy,
     update,
     remove,
+    sort
 }
 
 
@@ -41,3 +42,7 @@ function find() {
       .where('id', Number(id))
       .del();
   };
+
+  function sort(value) {
+      return db('stories').where('approved', '=', value )
+  }
