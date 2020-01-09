@@ -91,7 +91,7 @@ __Stories__
     "name":"refugeeName"  // 32 character max
     "location":"Albania"  // 32 character max
     "date":"1/2/2020" // 18 character max
-    "textbody":"alotoftextthatdoesntmatter" // 328 character max 
+    "textbody":"alotoftextthatdoesntmatter" // 3400 character max 
 }
 ```
 
