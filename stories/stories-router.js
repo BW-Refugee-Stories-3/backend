@@ -50,7 +50,7 @@ if (!id) {
     }
 })
 
-router.delete('/process/:id', (req, res) => {
+router.delete('/process/:id', restricted, (req, res) => {
     const { id } = req.params;
 
     Story.remove(id)
@@ -67,7 +67,7 @@ router.delete('/process/:id', (req, res) => {
           })
     }) 
 
-router.put('/process/:id', (req, res) => {
+router.put('/process/:id', restricted, (req, res) => {
     const changes = req.body
     const { id } = req.params
 
