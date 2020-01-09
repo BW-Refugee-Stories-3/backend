@@ -58,13 +58,13 @@ router.delete('/process/:id', (req, res) => {
         if (data) {
             res.json({deleted})
         } else {
-            res.status(404).json({ message: 'Could not find log with given id' });
+            res.status(404).json({ message: 'Could not find story with given id' });
         }})
-        .catch(err => {
-            res.status(500).json({ 
-              message: 'Failed to Delete Story',
-            });
-          })
+        // .catch(err => {
+        //     res.status(500).json({ 
+        //       message: 'Failed to Delete Story',
+        //     });
+        //   })
     }) 
 
 router.put('/process/:id', (req, res) => {
