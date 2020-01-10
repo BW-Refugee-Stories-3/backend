@@ -56,7 +56,7 @@ router.delete('/process/:id', restricted, (req, res) => {
     Story.remove(id)
     .then(data => {
         if (data) {
-            res.json({data})
+            res.status(201).json({data})
         } else {
             res.status(404).json({ message: 'Could not find story with given id' });
         }})
