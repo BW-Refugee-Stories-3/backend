@@ -51,24 +51,24 @@ describe("server", function() {
     describe("DEL /stories/process/:id" , function() {
         it("should return NaN", function() {
             const story = {
-                    name:"refugeeName",
-                    location:"Albania",
-                    date:"1/2/2020",
-                    textbody:"alotoftextthatdoesntmatter",
-            }
-
+                id: 2,
+                name:"Name",
+                location:"Canada",
+                date:"1/3/1200",
+                textbody:"ChangedTest",
+                approved: 1
+        }
             return request(server)
-                .delete("/api/stories/process/:id")
+                .delete(`/api/stories/process/${story.id}`)
                 .send(story)
                 .then(res => {
                     // wants to make sure there is no ID 
                     expect(res.body.id).not.toBeNaN()
-                })
         })
     })
 
     describe("PUT /stories/process/:id" , function() {
-        it("Should return true", function() {
+        it("Should return 400 err0r", function() {
             const storyChange = {
                 id: 2,
                 name:"Name",
@@ -78,13 +78,13 @@ describe("server", function() {
                 approved: 1
         }
             return request(server)
-                .put("/api/stories/process/2")
+                .put(`/api/stories/process/${storyChange.id}`)
                 .send({storyChange})
                 .then(res => {
                     // should return 400 becuase there is no token
-                    expect(res.status).toBe(400)
+                    expect(res.body).not.toMatchObject(storyChange)
                 })
         })
-
         })
     })
+})
