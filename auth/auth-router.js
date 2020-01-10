@@ -2,10 +2,10 @@ const router = require('express').Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-const Users = require('../users/user-model');
+const Users = require('./auth-model');
 const Token = require('./auth-helpers.js');
 
-router.post('/', (req, res) => {
+router.post('/register', (req, res) => {
   
   let { username, password } = req.body;
 
@@ -31,7 +31,7 @@ router.post('/', (req, res) => {
     });
 })
 
-router.post('/', (req, res) => {
+router.post('/login', (req, res) => {
 
   let user = req.body;
 
