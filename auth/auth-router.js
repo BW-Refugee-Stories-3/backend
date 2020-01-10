@@ -35,11 +35,7 @@ router.post('/register', (req, res) => {
 
   let user = req.body;
 
-  const validateResult = validateUser(user);
-
-  if (validateResult.isSuccessful === true) {
-    
-    const hash = bcrypt.hashSync(user.password, 10);
+  const hash = bcrypt.hashSync(user.password, 10);
     user.password = hash;
 
     const token = Token.getJwt(user.username);
@@ -51,14 +47,6 @@ router.post('/register', (req, res) => {
       .catch(error => {
         res.status(500).json(error);
       })
-
-  } else {
-
-    res.status(400).json({
-      message: 'Invalid user info, see errors',
-      errors: validateResult.errors
-    });
-  }
 })
 
 
