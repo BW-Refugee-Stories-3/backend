@@ -31,7 +31,7 @@ router.post('/login', (req, res) => {
     });
 })
 
-router.post('/request', (req, res) => {
+router.post('/register', (req, res) => {
 
   let user = req.body;
 
