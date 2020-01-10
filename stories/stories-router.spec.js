@@ -68,7 +68,7 @@ describe("server", function() {
     })
 
     describe("PUT /stories/process/:id" , function() {
-        it("Should return 400 err0r", function() {
+        it("Should return True", function() {
             const storyChange = {
                 id: 2,
                 name:"Name",
